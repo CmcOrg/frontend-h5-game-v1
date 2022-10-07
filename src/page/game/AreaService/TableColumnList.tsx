@@ -36,12 +36,6 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameAreaServiceInse
         valueType: 'fromNow',
     },
 
-    {
-        title: '是否启用',
-        dataIndex: 'enableFlag',
-        valueEnum: YesNoDict
-    },
-
     {title: '备注', dataIndex: 'remark', ellipsis: true,},
 
     {
