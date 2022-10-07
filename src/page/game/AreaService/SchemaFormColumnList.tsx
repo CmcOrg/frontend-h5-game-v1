@@ -1,8 +1,17 @@
 import {ProFormColumnsType} from "@ant-design/pro-components";
 import {GameAreaServiceInsertOrUpdateDTO} from "@/api/admin/GameAreaServiceController";
 import {AreaServiceStatusDict} from "@/page/game/AreaService/TableColumnList";
+import {DictLongListVO} from "@/util/DictUtil";
 
 export const InitForm: GameAreaServiceInsertOrUpdateDTO = {} as GameAreaServiceInsertOrUpdateDTO
+
+const AreaServiceStatusSelectList: DictLongListVO[] = []
+AreaServiceStatusDict.forEach((value, key) => {
+    AreaServiceStatusSelectList.push({
+        label: value.text as string,
+        value: key
+    })
+})
 
 const SchemaFormColumnList = (): ProFormColumnsType<GameAreaServiceInsertOrUpdateDTO>[] => {
     return [
@@ -24,12 +33,18 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameAreaServiceInsertOrUpdat
 
         {
             title: '区服状态',
-            dataIndex: 'status',
+            dataIndex: 'state',
             valueType: 'select',
             fieldProps: {
-                showSearch: true,
-                options: AreaServiceStatusDict,
+                options: AreaServiceStatusSelectList,
             },
+            formItemProps: {
+                rules: [
+                    {
+                        required: true
+                    }
+                ]
+            }
         },
 
         {

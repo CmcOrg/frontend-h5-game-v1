@@ -1,4 +1,3 @@
-import {YesNoDict} from "@/util/DictUtil";
 import {ActionType, ProColumns, ProSchemaValueEnumType} from "@ant-design/pro-components";
 import {
     GameAreaServiceDeleteByIdSet,
@@ -9,9 +8,9 @@ import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
 
 // 区服状态
 export const AreaServiceStatusDict = new Map<any, ProSchemaValueEnumType>();
-YesNoDict.set(0, {text: '关闭', status: 'error'})
-YesNoDict.set(1, {text: '正常', status: 'success'})
-YesNoDict.set(2, {text: '维护', status: 'waring'})
+AreaServiceStatusDict.set(0, {text: '关闭', status: 'error'})
+AreaServiceStatusDict.set(1, {text: '正常', status: 'success'})
+AreaServiceStatusDict.set(2, {text: '维护', status: 'waring'})
 
 const TableColumnList = (currentForm: React.MutableRefObject<GameAreaServiceInsertOrUpdateDTO | null>, setFormVisible: React.Dispatch<React.SetStateAction<boolean>>, actionRef: React.RefObject<ActionType>): ProColumns<GameAreaServiceDO>[] => [
     {
