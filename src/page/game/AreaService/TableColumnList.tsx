@@ -24,7 +24,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameAreaServiceInse
 
     {
         title: '区服状态',
-        dataIndex: 'status',
+        dataIndex: 'state',
         valueEnum: AreaServiceStatusDict
     },
 
