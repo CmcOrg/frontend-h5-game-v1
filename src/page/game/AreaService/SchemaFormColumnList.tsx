@@ -1,6 +1,6 @@
-import {YesNoDict} from "@/util/DictUtil";
 import {ProFormColumnsType} from "@ant-design/pro-components";
 import {GameAreaServiceInsertOrUpdateDTO} from "@/api/admin/GameAreaServiceController";
+import {AreaServiceStatusDict} from "@/page/game/AreaService/TableColumnList";
 
 export const InitForm: GameAreaServiceInsertOrUpdateDTO = {} as GameAreaServiceInsertOrUpdateDTO
 
@@ -23,10 +23,13 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameAreaServiceInsertOrUpdat
         },
 
         {
-            title: '是否停服',
-            dataIndex: 'shutdownFlag',
-            valueEnum: YesNoDict,
-            valueType: 'switch',
+            title: '区服状态',
+            dataIndex: 'status',
+            valueType: 'select',
+            fieldProps: {
+                showSearch: true,
+                options: AreaServiceStatusDict,
+            },
         },
 
         {
