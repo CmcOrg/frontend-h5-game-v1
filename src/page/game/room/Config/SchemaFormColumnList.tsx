@@ -1,4 +1,4 @@
-import {YesNoDict} from "@/util/DictUtil";
+import {DictLongListVO, YesNoDict} from "@/util/DictUtil";
 import {ProFormColumnsType} from "@ant-design/pro-components";
 import {GameRoomConfigInsertOrUpdateDTO} from "@/api/admin/GameRoomConfigController";
 import {
@@ -62,7 +62,7 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameRoomConfigInsertOrUpdate
                 name: ['playType'],
             },
             columns: ({playType}: GameRoomConfigInsertOrUpdateDTO): ProFormColumnsType<GameRoomConfigInsertOrUpdateDTO>[] => {
-                let options = []
+                let options: DictLongListVO[]
                 if (playType) {
                     // 过滤：只要：房间玩法支持的 房间类型
                     let roomTypeSet = GameRoomConfigPlayTypeEnum.get(playType)!.roomTypeSet;
