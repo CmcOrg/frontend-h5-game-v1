@@ -22,9 +22,9 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
 
     {title: '配置名称', dataIndex: 'name', ellipsis: true,},
 
-    {title: '最大人数', dataIndex: 'maxUserTotal', ellipsis: true,},
+    {title: '最大人数', dataIndex: 'maxUserTotal', ellipsis: true, hideInSearch: true,},
 
-    {title: '最大数量', dataIndex: 'maxRoomTotal', ellipsis: true,},
+    {title: '最大数量', dataIndex: 'maxRoomTotal', ellipsis: true, hideInSearch: true,},
 
     {
         title: '房间玩法', dataIndex: 'playType', valueType: 'select',
@@ -66,9 +66,9 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
         },
     },
 
-    {title: '货币最低', dataIndex: 'minUserMoney', ellipsis: true,},
+    {title: '货币最低', dataIndex: 'minUserMoney', ellipsis: true, hideInSearch: true,},
 
-    {title: '货币最高', dataIndex: 'maxUserMoney', ellipsis: true,},
+    {title: '货币最高', dataIndex: 'maxUserMoney', ellipsis: true, hideInSearch: true,},
 
     {
         title: '限制经验', dataIndex: 'userExpType', valueType: 'select',
@@ -78,9 +78,9 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
         },
     },
 
-    {title: '最低经验', dataIndex: 'minUserExp', ellipsis: true,},
+    {title: '最低经验', dataIndex: 'minUserExp', ellipsis: true, hideInSearch: true,},
 
-    {title: '最高经验', dataIndex: 'maxUserExp', ellipsis: true,},
+    {title: '最高经验', dataIndex: 'maxUserExp', ellipsis: true, hideInSearch: true,},
 
     {
         title: '增加经验', dataIndex: 'roomExpType', valueType: 'select',
