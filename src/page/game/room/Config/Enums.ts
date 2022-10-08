@@ -2,6 +2,7 @@ import {NumberStringMapToSelectList, NumberTextMapToSelectList} from "@/util/Dic
 
 // 货币类型
 export const GameMoneyTypeEnum = new Map<number, string>();
+GameMoneyTypeEnum.set(-1, "无")
 GameMoneyTypeEnum.set(1, "金币")
 GameMoneyTypeEnum.set(2, "龙晶")
 GameMoneyTypeEnum.set(3, "钻石")
@@ -38,6 +39,7 @@ export const GameRoomConfigRoomTypeEnumSelectList = NumberStringMapToSelectList(
 
 // 用户经验值类型
 export const GameUserExpTypeEnum = new Map<number, string>();
+GameUserExpTypeEnum.set(-1, "无")
 GameUserExpTypeEnum.set(1, "普通经验")
 
 // 将 map转换为 下拉选 list
