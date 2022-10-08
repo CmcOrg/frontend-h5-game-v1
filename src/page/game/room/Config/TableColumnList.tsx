@@ -1,11 +1,15 @@
 import {YesNoDict} from "@/util/DictUtil";
-import {ActionType, ProColumns} from "@ant-design/pro-components";
+import {ActionType, ProColumns, ProSchemaValueEnumType} from "@ant-design/pro-components";
 import {
     GameRoomConfigDeleteByIdSet,
     GameRoomConfigDO,
     GameRoomConfigInsertOrUpdateDTO
 } from "@/api/admin/GameRoomConfigController";
 import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
+
+// 区服状态
+export const GameMoneyTypeEnum = new Map<any, ProSchemaValueEnumType>();
+
 
 const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInsertOrUpdateDTO | null>, setFormVisible: React.Dispatch<React.SetStateAction<boolean>>, actionRef: React.RefObject<ActionType>): ProColumns<GameRoomConfigDO>[] => [
     {

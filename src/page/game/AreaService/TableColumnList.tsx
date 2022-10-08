@@ -7,10 +7,10 @@ import {
 import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
 
 // 区服状态
-export const AreaServiceStatusDict = new Map<any, ProSchemaValueEnumType>();
-AreaServiceStatusDict.set(0, {text: '关闭', status: 'error'})
-AreaServiceStatusDict.set(1, {text: '正常', status: 'success'})
-AreaServiceStatusDict.set(2, {text: '维护', status: 'warning'})
+export const AreaServiceStateEnumColorMap = new Map<number, ProSchemaValueEnumType>();
+AreaServiceStateEnumColorMap.set(0, {text: '关闭', status: 'error'})
+AreaServiceStateEnumColorMap.set(1, {text: '正常', status: 'success'})
+AreaServiceStateEnumColorMap.set(2, {text: '维护', status: 'warning'})
 
 const TableColumnList = (currentForm: React.MutableRefObject<GameAreaServiceInsertOrUpdateDTO | null>, setFormVisible: React.Dispatch<React.SetStateAction<boolean>>, actionRef: React.RefObject<ActionType>): ProColumns<GameAreaServiceDO>[] => [
     {
@@ -24,7 +24,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameAreaServiceInse
     {
         title: '区服状态',
         dataIndex: 'state',
-        valueEnum: AreaServiceStatusDict
+        valueEnum: AreaServiceStateEnumColorMap
     },
 
     {
