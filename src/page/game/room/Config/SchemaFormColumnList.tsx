@@ -112,7 +112,7 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameRoomConfigInsertOrUpdate
 
         {
             title: '得到货币类型',
-            dataIndex: 'getMoneyType',
+            dataIndex: 'gotMoneyType',
             valueType: 'select',
             fieldProps: {
                 showSearch: true,

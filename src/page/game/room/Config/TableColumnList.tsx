@@ -51,7 +51,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
     },
 
     {
-        title: '得到货币', dataIndex: 'getMoneyType', valueType: 'select',
+        title: '得到货币', dataIndex: 'gotMoneyType', valueType: 'select',
         fieldProps: {
             showSearch: true,
             options: GameMoneyTypeEnumSelectList,
