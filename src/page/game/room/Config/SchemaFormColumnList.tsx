@@ -23,12 +23,6 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameRoomConfigInsertOrUpdate
         },
 
         {
-            title: '排序号',
-            dataIndex: 'orderNo',
-            tooltip: '值越大越前面',
-        },
-
-        {
             title: '房间最大人数',
             dataIndex: 'maxUserTotal',
         },
@@ -105,6 +99,12 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameRoomConfigInsertOrUpdate
             dataIndex: 'enableFlag',
             valueEnum: YesNoDict,
             valueType: 'switch',
+        },
+
+        {
+            title: '排序号',
+            dataIndex: 'orderNo',
+            tooltip: '值越大越前面',
         },
 
         {

@@ -43,13 +43,6 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
     {title: '增加经验', dataIndex: 'roomExpType', ellipsis: true,},
 
     {
-        title: '创建时间',
-        dataIndex: 'createTime',
-        hideInSearch: true,
-        valueType: 'fromNow',
-    },
-
-    {
         title: '修改时间',
         dataIndex: 'updateTime',
         hideInSearch: true,
