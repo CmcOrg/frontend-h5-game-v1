@@ -59,7 +59,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
     },
 
     {
-        title: '限制货币', dataIndex: 'userMoneyType', valueType: 'select',
+        title: '限制货币', dataIndex: 'limitMoneyType', valueType: 'select',
         fieldProps: {
             showSearch: true,
             options: GameMoneyTypeEnumSelectList,
@@ -71,7 +71,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
     {title: '货币最高', dataIndex: 'maxUserMoney', ellipsis: true, hideInSearch: true,},
 
     {
-        title: '限制经验', dataIndex: 'userExpType', valueType: 'select',
+        title: '限制经验', dataIndex: 'limitExpType', valueType: 'select',
         fieldProps: {
             showSearch: true,
             options: GameUserExpTypeEnumSelectList,

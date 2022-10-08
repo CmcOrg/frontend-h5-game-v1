@@ -25,10 +25,10 @@ export interface GameRoomConfigDO {
     roomType?: 1000 | 2000 | 2001 | 2002 | 2003 | 3000 // 房间类型，例如：1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛
     useMoneyType?: 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
     getMoneyType?: 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
-    userMoneyType?: 1 | 2 | 3 | 4 // 用户限制货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
+    limitMoneyType?: 1 | 2 | 3 | 4 // 用户限制货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
     minUserMoney?: number // 用户携带货币最低值
     maxUserMoney?: number // 用户携带货币最高值
-    userExpType?: 1 // 用户限制经验值类型：1 普通经验
+    limitExpType?: 1 // 用户限制经验值类型：1 普通经验
     minUserExp?: number // 最低用户经验值
     maxUserExp?: number // 最高用户经验值
     roomExpType?: 1 // 房间增加经验值的类型：1 普通经验
@@ -58,10 +58,10 @@ export interface GameRoomConfigInsertOrUpdateDTO {
     roomType?: 1000 | 2000 | 2001 | 2002 | 2003 | 3000 // 房间类型，例如：1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛
     useMoneyType?: 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
     getMoneyType?: 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
-    userMoneyType?: 1 | 2 | 3 | 4 // 用户限制货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
+    limitMoneyType?: 1 | 2 | 3 | 4 // 用户限制货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
     minUserMoney?: number // 用户携带货币最低值
     maxUserMoney?: number // 用户携带货币最高值
-    userExpType?: 1 // 用户限制经验值类型：1 普通经验
+    limitExpType?: 1 // 用户限制经验值类型：1 普通经验
     minUserExp?: number // 最低用户经验值
     maxUserExp?: number // 最高用户经验值
     roomExpType?: 1 // 房间增加经验值的类型：1 普通经验

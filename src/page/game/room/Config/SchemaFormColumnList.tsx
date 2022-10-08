@@ -129,7 +129,7 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameRoomConfigInsertOrUpdate
 
         {
             title: '用户限制货币类型',
-            dataIndex: 'userMoneyType',
+            dataIndex: 'limitMoneyType',
             valueType: 'select',
             fieldProps: {
                 showSearch: true,
@@ -156,7 +156,7 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameRoomConfigInsertOrUpdate
 
         {
             title: '用户限制经验值类型',
-            dataIndex: 'userExpType',
+            dataIndex: 'limitExpType',
             valueType: 'select',
             fieldProps: {
                 showSearch: true,
