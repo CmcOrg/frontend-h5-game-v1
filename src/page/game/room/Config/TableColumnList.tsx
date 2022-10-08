@@ -1,15 +1,17 @@
 import {YesNoDict} from "@/util/DictUtil";
-import {ActionType, ProColumns, ProSchemaValueEnumType} from "@ant-design/pro-components";
+import {ActionType, ProColumns} from "@ant-design/pro-components";
 import {
     GameRoomConfigDeleteByIdSet,
     GameRoomConfigDO,
     GameRoomConfigInsertOrUpdateDTO
 } from "@/api/admin/GameRoomConfigController";
 import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
-
-// 区服状态
-export const GameMoneyTypeEnum = new Map<any, ProSchemaValueEnumType>();
-
+import {
+    GameMoneyTypeEnumSelectList,
+    GameRoomConfigPlayTypeEnumSelectList,
+    GameRoomConfigRoomTypeEnumSelectList,
+    GameUserExpTypeEnumSelectList
+} from "@/page/game/room/Config/Enums";
 
 const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInsertOrUpdateDTO | null>, setFormVisible: React.Dispatch<React.SetStateAction<boolean>>, actionRef: React.RefObject<ActionType>): ProColumns<GameRoomConfigDO>[] => [
     {
@@ -24,27 +26,69 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
 
     {title: '最大数量', dataIndex: 'maxRoomTotal', ellipsis: true,},
 
-    {title: '房间玩法', dataIndex: 'playType', ellipsis: true,},
+    {
+        title: '房间玩法', dataIndex: 'playType', valueType: 'select',
+        fieldProps: {
+            showSearch: true,
+            options: GameRoomConfigPlayTypeEnumSelectList,
+        },
+    },
 
-    {title: '房间类型', dataIndex: 'roomType', ellipsis: true,},
+    {
+        title: '房间类型', dataIndex: 'roomType', valueType: 'select',
+        fieldProps: {
+            showSearch: true,
+            options: GameRoomConfigRoomTypeEnumSelectList,
+        },
+    },
 
-    {title: '消耗货币', dataIndex: 'useMoneyType', ellipsis: true,},
+    {
+        title: '消耗货币', dataIndex: 'useMoneyType', valueType: 'select',
+        fieldProps: {
+            showSearch: true,
+            options: GameMoneyTypeEnumSelectList,
+        },
+    },
 
-    {title: '得到货币', dataIndex: 'getMoneyType', ellipsis: true,},
+    {
+        title: '得到货币', dataIndex: 'getMoneyType', valueType: 'select',
+        fieldProps: {
+            showSearch: true,
+            options: GameMoneyTypeEnumSelectList,
+        },
+    },
 
-    {title: '限制货币', dataIndex: 'userMoneyType', ellipsis: true,},
+    {
+        title: '限制货币', dataIndex: 'userMoneyType', valueType: 'select',
+        fieldProps: {
+            showSearch: true,
+            options: GameMoneyTypeEnumSelectList,
+        },
+    },
 
     {title: '货币最低', dataIndex: 'minUserMoney', ellipsis: true,},
 
     {title: '货币最高', dataIndex: 'maxUserMoney', ellipsis: true,},
 
-    {title: '限制经验', dataIndex: 'userExpType', ellipsis: true,},
+    {
+        title: '限制经验', dataIndex: 'userExpType', valueType: 'select',
+        fieldProps: {
+            showSearch: true,
+            options: GameUserExpTypeEnumSelectList,
+        },
+    },
 
     {title: '最低经验', dataIndex: 'minUserExp', ellipsis: true,},
 
     {title: '最高经验', dataIndex: 'maxUserExp', ellipsis: true,},
 
-    {title: '增加经验', dataIndex: 'roomExpType', ellipsis: true,},
+    {
+        title: '增加经验', dataIndex: 'roomExpType', valueType: 'select',
+        fieldProps: {
+            showSearch: true,
+            options: GameUserExpTypeEnumSelectList,
+        },
+    },
 
     {
         title: '修改时间',

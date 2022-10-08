@@ -1,6 +1,13 @@
 import {YesNoDict} from "@/util/DictUtil";
 import {ProFormColumnsType} from "@ant-design/pro-components";
 import {GameRoomConfigInsertOrUpdateDTO} from "@/api/admin/GameRoomConfigController";
+import {
+    GameMoneyTypeEnumSelectList,
+    GameRoomConfigPlayTypeEnum,
+    GameRoomConfigPlayTypeEnumSelectList,
+    GameRoomConfigRoomTypeEnumSelectList,
+    GameUserExpTypeEnumSelectList
+} from "@/page/game/room/Config/Enums";
 
 export const InitForm: GameRoomConfigInsertOrUpdateDTO = {} as GameRoomConfigInsertOrUpdateDTO
 
@@ -35,31 +42,106 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameRoomConfigInsertOrUpdate
         {
             title: '房间玩法',
             dataIndex: 'playType',
-            tooltip: '1 大厅 2 捕鱼 3 斗地主',
+            valueType: 'select',
+            fieldProps: {
+                showSearch: true,
+                options: GameRoomConfigPlayTypeEnumSelectList,
+            },
+            formItemProps: {
+                rules: [
+                    {
+                        required: true
+                    }
+                ]
+            }
         },
 
         {
-            title: '房间类型',
-            dataIndex: 'roomType',
-            tooltip: '1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛',
+            valueType: 'dependency',
+            fieldProps: {
+                name: ['playType'],
+            },
+            columns: ({playType}: GameRoomConfigInsertOrUpdateDTO): ProFormColumnsType<GameRoomConfigInsertOrUpdateDTO>[] => {
+                let options = []
+                if (playType) {
+                    // 过滤：只要：房间玩法支持的 房间类型
+                    let roomTypeSet = GameRoomConfigPlayTypeEnum.get(playType)!.roomTypeSet;
+                    options = GameRoomConfigRoomTypeEnumSelectList.filter(item => {
+                        return roomTypeSet.includes(item.value)
+                    })
+                } else {
+                    options = GameRoomConfigRoomTypeEnumSelectList
+                }
+                return [
+                    {
+                        title: '房间类型',
+                        dataIndex: 'roomType',
+                        valueType: 'select',
+                        fieldProps: {
+                            showSearch: true,
+                            options,
+                        },
+                        formItemProps: {
+                            rules: [
+                                {
+                                    required: true
+                                }
+                            ]
+                        }
+                    },
+                ]
+            }
         },
 
         {
             title: '消耗货币类型',
             dataIndex: 'useMoneyType',
-            tooltip: '1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）',
+            valueType: 'select',
+            fieldProps: {
+                showSearch: true,
+                options: GameMoneyTypeEnumSelectList,
+            },
+            formItemProps: {
+                rules: [
+                    {
+                        required: true
+                    }
+                ]
+            }
         },
 
         {
             title: '得到货币类型',
             dataIndex: 'getMoneyType',
-            tooltip: '1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）',
+            valueType: 'select',
+            fieldProps: {
+                showSearch: true,
+                options: GameMoneyTypeEnumSelectList,
+            },
+            formItemProps: {
+                rules: [
+                    {
+                        required: true
+                    }
+                ]
+            }
         },
 
         {
             title: '用户限制货币类型',
             dataIndex: 'userMoneyType',
-            tooltip: '1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）',
+            valueType: 'select',
+            fieldProps: {
+                showSearch: true,
+                options: GameMoneyTypeEnumSelectList,
+            },
+            formItemProps: {
+                rules: [
+                    {
+                        required: true
+                    }
+                ]
+            }
         },
 
         {
@@ -75,7 +157,18 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameRoomConfigInsertOrUpdate
         {
             title: '用户限制经验值类型',
             dataIndex: 'userExpType',
-            tooltip: '1 普通经验',
+            valueType: 'select',
+            fieldProps: {
+                showSearch: true,
+                options: GameUserExpTypeEnumSelectList,
+            },
+            formItemProps: {
+                rules: [
+                    {
+                        required: true
+                    }
+                ]
+            }
         },
 
         {
@@ -91,7 +184,18 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameRoomConfigInsertOrUpdate
         {
             title: '房间增加经验值的类型',
             dataIndex: 'roomExpType',
-            tooltip: '1 普通经验',
+            valueType: 'select',
+            fieldProps: {
+                showSearch: true,
+                options: GameUserExpTypeEnumSelectList,
+            },
+            formItemProps: {
+                rules: [
+                    {
+                        required: true
+                    }
+                ]
+            }
         },
 
         {

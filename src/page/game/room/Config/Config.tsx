@@ -88,6 +88,7 @@ export default function () {
             </ProTable>
 
             <BetaSchemaForm<GameRoomConfigInsertOrUpdateDTO>
+                shouldUpdate={false}
                 title={currentForm.current.id ? "编辑房间配置" : "新建房间配置"}
                 layoutType={"ModalForm"}
                 grid

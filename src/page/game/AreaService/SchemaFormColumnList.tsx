@@ -1,17 +1,8 @@
 import {ProFormColumnsType} from "@ant-design/pro-components";
 import {GameAreaServiceInsertOrUpdateDTO} from "@/api/admin/GameAreaServiceController";
-import {AreaServiceStateEnumColorMap} from "@/page/game/AreaService/TableColumnList";
-import {DictLongListVO} from "@/util/DictUtil";
+import {AreaServiceStateEnumSelectList} from "@/page/game/AreaService/Enums";
 
 export const InitForm: GameAreaServiceInsertOrUpdateDTO = {} as GameAreaServiceInsertOrUpdateDTO
-
-const AreaServiceStatusSelectList: DictLongListVO[] = []
-AreaServiceStateEnumColorMap.forEach((value, key) => {
-    AreaServiceStatusSelectList.push({
-        label: value.text as string,
-        value: key
-    })
-})
 
 const SchemaFormColumnList = (): ProFormColumnsType<GameAreaServiceInsertOrUpdateDTO>[] => {
     return [
@@ -36,7 +27,7 @@ const SchemaFormColumnList = (): ProFormColumnsType<GameAreaServiceInsertOrUpdat
             dataIndex: 'state',
             valueType: 'select',
             fieldProps: {
-                options: AreaServiceStatusSelectList,
+                options: AreaServiceStateEnumSelectList,
             },
             formItemProps: {
                 rules: [

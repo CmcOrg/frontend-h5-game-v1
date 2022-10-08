@@ -1,16 +1,11 @@
-import {ActionType, ProColumns, ProSchemaValueEnumType} from "@ant-design/pro-components";
+import {ActionType, ProColumns} from "@ant-design/pro-components";
 import {
     GameAreaServiceDeleteByIdSet,
     GameAreaServiceDO,
     GameAreaServiceInsertOrUpdateDTO
 } from "@/api/admin/GameAreaServiceController";
 import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
-
-// 区服状态
-export const AreaServiceStateEnumColorMap = new Map<number, ProSchemaValueEnumType>();
-AreaServiceStateEnumColorMap.set(0, {text: '关闭', status: 'error'})
-AreaServiceStateEnumColorMap.set(1, {text: '正常', status: 'success'})
-AreaServiceStateEnumColorMap.set(2, {text: '维护', status: 'warning'})
+import {AreaServiceStateEnumColorMap} from "@/page/game/AreaService/Enums";
 
 const TableColumnList = (currentForm: React.MutableRefObject<GameAreaServiceInsertOrUpdateDTO | null>, setFormVisible: React.Dispatch<React.SetStateAction<boolean>>, actionRef: React.RefObject<ActionType>): ProColumns<GameAreaServiceDO>[] => [
     {
