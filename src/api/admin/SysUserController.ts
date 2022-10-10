@@ -14,7 +14,6 @@ export function SysUserDeleteByIdSet(form: NotEmptyIdSet, config?: AxiosRequestC
 
 export interface SysUserDictListDTO {
     addAdminFlag?: boolean // 是否追加 admin账号
-    sort?: Record<string, SortOrder> // 排序字段（只在前端使用，实际传值：order）
 }
 
 export interface DictResultVO {
@@ -65,7 +64,7 @@ export interface SysUserInsertOrUpdateDTO {
     nickname?: string // 昵称 {"regexp":"^[\\u4E00-\\u9FA5A-Za-z0-9_-]{2,20}$"}
     bio?: string // 个人简介
     avatarUri?: string // 头像uri
-    enableFlag?: boolean // 正常/冻结
+    enableFlag?: boolean // 是否正常
     roleIdSet?: number[] // 角色 idSet
     id?: number // 主键id {"min":1}
 }
@@ -86,6 +85,7 @@ export interface SysUserPageDTO {
     current?: number // 第几页
     pageSize?: number // 每页显示条数
     order?: MyOrderDTO // 排序字段
+    sort?: Record<string, SortOrder> // 排序字段（只在前端使用，实际传值：order）
 }
 
 export interface SysUserPageVO {
@@ -94,7 +94,7 @@ export interface SysUserPageVO {
     avatarUri?: string // 头像uri
     email?: string // 邮箱，备注：会脱敏
     signInName?: string // 登录名，会脱敏
-    enableFlag?: boolean // 正常/冻结
+    enableFlag?: boolean // 是否正常
     passwordFlag?: boolean // 是否有密码
     createTime?: string // 创建时间
     updateTime?: string // 修改时间
