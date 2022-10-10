@@ -23,15 +23,15 @@ export interface GameRoomConfigDO {
     maxRoomTotal?: number // 房间最大数量
     playType?: 1 | 2 | 3 // 房间玩法：1 大厅 2 捕鱼 3 斗地主
     roomType?: 1000 | 2000 | 2001 | 2002 | 2003 | 3000 // 房间类型，例如：1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛
-    useMoneyType?: 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
-    gotMoneyType?: 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
-    limitMoneyType?: 1 | 2 | 3 | 4 // 用户限制货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
+    useMoneyType?: -1 | 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
+    gotMoneyType?: -1 | 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
+    limitMoneyType?: -1 | 1 | 2 | 3 | 4 // 用户限制货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
     minUserMoney?: number // 用户携带货币最低值
     maxUserMoney?: number // 用户携带货币最高值
-    limitExpType?: 1 // 用户限制经验值类型：1 普通经验
+    limitExpType?: -1 | 1 // 用户限制经验值类型：1 普通经验
     minUserExp?: number // 最低用户经验值
     maxUserExp?: number // 最高用户经验值
-    roomExpType?: 1 // 房间增加经验值的类型：1 普通经验
+    roomExpType?: -1 | 1 // 房间增加经验值的类型：1 普通经验
     id?: number // 主键id
     createId?: number // 创建人id
     createTime?: string // 创建时间
@@ -56,15 +56,15 @@ export interface GameRoomConfigInsertOrUpdateDTO {
     maxRoomTotal?: number // 房间最大数量
     playType?: 1 | 2 | 3 // 房间玩法：1 大厅 2 捕鱼 3 斗地主
     roomType?: 1000 | 2000 | 2001 | 2002 | 2003 | 3000 // 房间类型，例如：1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛
-    useMoneyType?: 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
-    gotMoneyType?: 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
-    limitMoneyType?: 1 | 2 | 3 | 4 // 用户限制货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
+    useMoneyType?: -1 | 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
+    gotMoneyType?: -1 | 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
+    limitMoneyType?: -1 | 1 | 2 | 3 | 4 // 用户限制货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
     minUserMoney?: number // 用户携带货币最低值
     maxUserMoney?: number // 用户携带货币最高值
-    limitExpType?: 1 // 用户限制经验值类型：1 普通经验
+    limitExpType?: -1 | 1 // 用户限制经验值类型：1 普通经验
     minUserExp?: number // 最低用户经验值
     maxUserExp?: number // 最高用户经验值
-    roomExpType?: 1 // 房间增加经验值的类型：1 普通经验
+    roomExpType?: -1 | 1 // 房间增加经验值的类型：1 普通经验
     enableFlag?: boolean // 是否启用
     remark?: string // 备注
 }
@@ -78,9 +78,12 @@ export interface GameRoomConfigPageDTO {
     name?: string // 房间配置名称
     playType?: 1 | 2 | 3 // 房间玩法：1 大厅 2 捕鱼 3 斗地主
     roomType?: 1000 | 2000 | 2001 | 2002 | 2003 | 3000 // 房间类型，例如：1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛
-    useMoneyType?: 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
-    gotMoneyType?: 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
-    roomExpType?: 1 // 房间增加经验值的类型：1 普通经验
+    useMoneyType?: -1 | 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
+    gotMoneyType?: -1 | 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
+    limitMoneyType?: -1 | 1 | 2 | 3 | 4 // 用户限制货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
+    limitExpType?: -1 | 1 // 用户限制经验值类型：1 普通经验
+    roomExpType?: -1 | 1 // 房间增加经验值的类型：1 普通经验
+    enableFlag?: boolean // 是否启用
     remark?: string // 备注
     current?: number // 第几页
     pageSize?: number // 每页显示条数
