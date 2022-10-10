@@ -44,7 +44,7 @@ export default function () {
                     },
                 }}
                 revalidateOnFocus={false}
-                columns={TableColumnList(currentForm, setFormVisible, actionRef)}
+                columns={TableColumnList(actionRef)}
                 options={{
                     fullScreen: true,
                 }}

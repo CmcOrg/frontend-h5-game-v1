@@ -1,12 +1,8 @@
 import {ActionType, ProColumns} from "@ant-design/pro-components";
-import {
-    AdminInsertOrUpdateDTO,
-    GameRoomCurrentDeleteByIdSet,
-    GameRoomCurrentPageVO
-} from "@/api/admin/GameRoomCurrentController";
+import {GameRoomCurrentDeleteByIdSet, GameRoomCurrentPageVO} from "@/api/admin/GameRoomCurrentController";
 import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
 
-const TableColumnList = (currentForm: React.MutableRefObject<AdminInsertOrUpdateDTO | null>, setFormVisible: React.Dispatch<React.SetStateAction<boolean>>, actionRef: React.RefObject<ActionType>): ProColumns<GameRoomCurrentPageVO>[] => [
+const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<GameRoomCurrentPageVO>[] => [
     {
         title: '序号',
         dataIndex: 'index',
@@ -40,11 +36,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<AdminInsertOrUpdate
         dataIndex: 'option',
         valueType: 'option',
         render: (dom, entity) => [
-            <a key="1" onClick={() => {
-                currentForm.current = {id: entity.id} as AdminInsertOrUpdateDTO
-                setFormVisible(true)
-            }}>编辑</a>,
-            <a key="2" className={"red3"} onClick={() => {
+            <a key="1" className={"red3"} onClick={() => {
                 ExecConfirm(() => {
                     return GameRoomCurrentDeleteByIdSet({idSet: [entity.id!]}).then(res => {
                         ToastSuccess(res.msg)
