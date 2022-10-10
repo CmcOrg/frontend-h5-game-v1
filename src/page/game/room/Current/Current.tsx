@@ -1,19 +1,14 @@
 import {useRef, useState} from "react";
-import {ActionType, BetaSchemaForm, ColumnsState, ProTable} from "@ant-design/pro-components";
-import {Button, Form, Space} from "antd";
-import {PlusOutlined} from "@ant-design/icons/lib";
+import {ActionType, ColumnsState, ProTable} from "@ant-design/pro-components";
+import {Space} from "antd";
 import {
-    AdminInsertOrUpdate,
-    AdminInsertOrUpdateDTO,
     GameRoomCurrentDeleteByIdSet,
-    GameRoomCurrentInfoById,
     GameRoomCurrentPage,
     GameRoomCurrentPageDTO,
     GameRoomCurrentPageVO
 } from "@/api/admin/GameRoomCurrentController";
 import TableColumnList from "./TableColumnList";
 import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
-import SchemaFormColumnList, {InitForm} from "./SchemaFormColumnList";
 import CommonConstant from "@/model/constant/CommonConstant";
 
 // 当前房间
@@ -24,12 +19,6 @@ export default function () {
     const [expandedRowKeys, setExpandedRowKeys] = useState<number[]>([]);
 
     const actionRef = useRef<ActionType>(null)
-
-    const [useForm] = Form.useForm<AdminInsertOrUpdateDTO>();
-
-    const [formVisible, setFormVisible] = useState<boolean>(false);
-
-    const currentForm = useRef<AdminInsertOrUpdateDTO>({} as AdminInsertOrUpdateDTO)
 
     return (
         <>
@@ -62,14 +51,6 @@ export default function () {
                 request={(params, sort, filter) => {
                     return GameRoomCurrentPage({...params, sort})
                 }}
-                toolbar={{
-                    actions: [
-                        <Button key={"1"} icon={<PlusOutlined/>} type="primary" onClick={() => {
-                            currentForm.current = {} as AdminInsertOrUpdateDTO
-                            setFormVisible(true)
-                        }}>新建</Button>
-                    ],
-                }}
                 tableAlertOptionRender={({selectedRowKeys, selectedRows, onCleanSelected}) => (
                     <Space size={16}>
                         <a className={"red3"} onClick={() => {
@@ -86,79 +67,6 @@ export default function () {
                 )}
             >
             </ProTable>
-
-            <BetaSchemaForm<AdminInsertOrUpdateDTO>
-                title={currentForm.current.id ? "编辑当前房间" : "新建当前房间"}
-                layoutType={"ModalForm"}
-                grid
-                rowProps={{
-                    gutter: 16
-                }}
-                colProps={{
-                    span: 12
-                }}
-                modalProps={{
-                    maskClosable: false,
-                }}
-                form={useForm}
-                isKeyPressSubmit
-                submitter={{
-                    render: (props, dom) => {
-                        return [
-                            ...dom,
-                            <Button
-                                key="1"
-                                onClick={() => {
-                                    ExecConfirm(async () => {
-                                        props.reset();
-                                    }, undefined, "确定重置表单吗？")
-                                }}
-                            >
-                                重置
-                            </Button>,
-                            currentForm.current.id ? <Button
-                                key="2"
-                                type="primary"
-                                danger
-                                onClick={() => {
-                                    ExecConfirm(async () => {
-                                        return GameRoomCurrentDeleteByIdSet({idSet: [currentForm.current.id!]}).then(res => {
-                                            setFormVisible(false)
-                                            ToastSuccess(res.msg)
-                                            actionRef.current?.reload()
-                                        })
-                                    }, undefined, `确定删除【${currentForm.current.name}】吗？`)
-                                }}>
-                                删除
-                            </Button> : null
-                        ]
-                    },
-                }}
-                params={new Date()} // 目的：为了打开页面时，执行 request方法
-                request={async () => {
-
-                    useForm.resetFields()
-
-                    if (currentForm.current.id) {
-                        await GameRoomCurrentInfoById({id: currentForm.current.id}).then(res => {
-                            currentForm.current = res as AdminInsertOrUpdateDTO
-                        })
-                    }
-                    useForm.setFieldsValue(currentForm.current) // 组件会深度克隆 currentForm.current
-
-                    return InitForm
-                }}
-                visible={formVisible}
-                onVisibleChange={setFormVisible}
-                columns={SchemaFormColumnList()}
-                onFinish={async (form) => {
-                    await AdminInsertOrUpdate({...currentForm.current, ...form}).then(res => {
-                        ToastSuccess(res.msg)
-                        actionRef.current?.reload()
-                    })
-                    return true
-                }}
-            />
         </>
     )
 }
