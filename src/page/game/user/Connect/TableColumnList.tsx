@@ -8,9 +8,9 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
         valueType: 'index',
     },
 
-    {title: '用户id', dataIndex: 'id', ellipsis: true,},
+    {title: '用户 id', dataIndex: 'id', ellipsis: true,},
 
-    {title: '房间id', dataIndex: 'roomCurrentId', ellipsis: true,},
+    {title: '房间 id', dataIndex: 'roomCurrentId', ellipsis: true,},
 
     {
         title: '创建时间',
