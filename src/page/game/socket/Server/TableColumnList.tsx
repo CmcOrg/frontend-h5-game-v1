@@ -9,6 +9,8 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
         valueType: 'index',
     },
 
+    {title: '主键 id', dataIndex: 'id', ellipsis: true,},
+
     {title: 'ip', dataIndex: 'ip', ellipsis: true,},
 
     {title: '端口', dataIndex: 'port', ellipsis: true,},

@@ -77,7 +77,7 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
         },
     },
 
-    {title: '服务器id', dataIndex: 'socketServerId', ellipsis: true,},
+    {title: 'socket服务器id', dataIndex: 'socketServerId', ellipsis: true,},
 
     {
         title: '操作',
