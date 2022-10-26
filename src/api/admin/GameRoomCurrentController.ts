@@ -30,12 +30,18 @@ export function GameRoomCurrentInfoById(form: NotNullId, config?: AxiosRequestCo
 }
 
 export interface GameRoomCurrentJoinRoomDTO {
-    roomConfigId?: number // 房间配置主键 id
+    roomConfigId: number // 房间配置主键 id {"min":1}
+}
+
+export interface GameRoomCurrentJoinRoomVO {
+    ip?: string // ip
+    port?: number // 端口，备注：ip + 端口，可以表示唯一标识
+    securityCode?: string // 连接码：用于获取：用户主键 id，格式：simple-uuid
 }
 
 // 加入房间
 export function GameRoomCurrentJoinRoom(form: GameRoomCurrentJoinRoomDTO, config?: AxiosRequestConfig) {
-    return $http.myPost<void>('/game/roomCurrent/joinRoom', form, config)
+    return $http.myPost<GameRoomCurrentJoinRoomVO>('/game/roomCurrent/joinRoom', form, config)
 }
 
 export interface GameRoomCurrentPageDTO {
