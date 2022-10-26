@@ -30,7 +30,7 @@ export function GameRoomCurrentInfoById(form: NotNullId, config?: AxiosRequestCo
 }
 
 export interface GameRoomCurrentJoinRoomDTO {
-    roomConfigId: number // 房间配置主键 id {"min":1}
+    roomConfigId: string // 房间配置主键 id {"min":1}
 }
 
 export interface GameRoomCurrentJoinRoomVO {
