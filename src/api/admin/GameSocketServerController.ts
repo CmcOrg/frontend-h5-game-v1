@@ -18,8 +18,9 @@ export interface NotNullId {
 
 export interface GameSocketServerDO {
     ip?: string // ip
-    port?: number // 端口
+    port?: number // 端口，备注：ip + 端口，可以表示唯一标识
     maxConnect?: number // 最大连接数
+    connectTotal?: number // 连接数
     id?: number // 主键id
     createId?: number // 创建人id
     createTime?: string // 创建时间
@@ -37,8 +38,9 @@ export function GameSocketServerInfoById(form: NotNullId, config?: AxiosRequestC
 }
 
 export interface GameSocketServerPageDTO {
+    id?: number // 主键id
     ip?: string // ip
-    port?: number // 端口
+    port?: number // 端口，备注：ip + 端口，可以表示唯一标识
     remark?: string // 备注
     current?: number // 第几页
     pageSize?: number // 每页显示条数

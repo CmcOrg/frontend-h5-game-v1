@@ -21,11 +21,21 @@ export interface GameRoomCurrentDO {
     createTime?: string // 创建时间
     roomConfigId?: number // 房间配置主键 id
     socketServerId?: number // socket服务器主键 id
+    connectTotal?: number // 连接数
 }
 
 // 通过主键id，查看详情
 export function GameRoomCurrentInfoById(form: NotNullId, config?: AxiosRequestConfig) {
     return $http.myProPost<GameRoomCurrentDO>('/game/roomCurrent/infoById', form, config)
+}
+
+export interface GameRoomCurrentJoinRoomDTO {
+    roomConfigId?: number // 房间配置主键 id
+}
+
+// 加入房间
+export function GameRoomCurrentJoinRoom(form: GameRoomCurrentJoinRoomDTO, config?: AxiosRequestConfig) {
+    return $http.myPost<void>('/game/roomCurrent/joinRoom', form, config)
 }
 
 export interface GameRoomCurrentPageDTO {
@@ -63,4 +73,9 @@ export interface GameRoomCurrentPageVO {
 // 分页排序查询
 export function GameRoomCurrentPage(form: GameRoomCurrentPageDTO, config?: AxiosRequestConfig) {
     return $http.myProPagePost<GameRoomCurrentPageVO>('/game/roomCurrent/page', form, config)
+}
+
+// 重连房间
+export function GameRoomCurrentReconnectRoom(config?: AxiosRequestConfig) {
+    return $http.myPost<void>('/game/roomCurrent/reconnectRoom', undefined, config)
 }
