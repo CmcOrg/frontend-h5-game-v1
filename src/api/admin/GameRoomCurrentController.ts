@@ -34,8 +34,8 @@ export interface GameRoomCurrentJoinRoomDTO {
 }
 
 export interface GameRoomCurrentJoinRoomVO {
-    ip?: string // ip
-    port?: number // 端口，备注：ip + 端口，可以表示唯一标识
+    host?: string // host
+    port?: number // 端口，备注：host + 端口，可以表示唯一标识
     securityCode?: string // 连接码：用于获取：用户主键 id，格式：simple-uuid
 }
 
