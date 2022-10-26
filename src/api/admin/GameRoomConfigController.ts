@@ -32,6 +32,8 @@ export interface GameRoomConfigDO {
     minUserExp?: number // 最低用户经验值
     maxUserExp?: number // 最高用户经验值
     roomExpType?: -1 | 1 // 房间增加经验值的类型：1 普通经验
+    connectTotal?: number // 连接数
+    roomCurrentTotal?: number // 当前房间数
     id?: number // 主键id
     createId?: number // 创建人id
     createTime?: string // 创建时间
