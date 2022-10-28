@@ -62,11 +62,6 @@ export function GameAreaServicePage(form: GameAreaServicePageDTO, config?: Axios
     return $http.myProPagePost<GameAreaServiceDO>('/game/areaService/page', form, config)
 }
 
-export interface MyOrderDTO {
-    name?: string // 排序的字段名
-    value?: string // ascend（升序，默认） descend（降序）
-}
-
 export interface GameAreaServiceUserPageDTO {
     name?: string // 区服名称
     current?: number // 第几页
