@@ -61,3 +61,20 @@ export interface GameAreaServicePageDTO {
 export function GameAreaServicePage(form: GameAreaServicePageDTO, config?: AxiosRequestConfig) {
     return $http.myProPagePost<GameAreaServiceDO>('/game/areaService/page', form, config)
 }
+
+export interface MyOrderDTO {
+    name?: string // 排序的字段名
+    value?: string // ascend（升序，默认） descend（降序）
+}
+
+export interface GameAreaServiceUserPageDTO {
+    name?: string // 区服名称
+    current?: number // 第几页
+    pageSize?: number // 每页显示条数
+    order?: MyOrderDTO // 排序字段
+}
+
+// 用户，分页排序查询
+export function GameAreaServiceUserPage(form: GameAreaServiceUserPageDTO, config?: AxiosRequestConfig) {
+    return $http.myProPagePost<GameAreaServiceDO>('/game/areaService/userPage', form, config)
+}
