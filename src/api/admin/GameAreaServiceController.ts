@@ -19,6 +19,7 @@ export interface NotNullId {
 export interface GameAreaServiceDO {
     name?: string // 区服名称
     state?: 0 | 1 | 2 // 区服状态：0 关闭 1 正常 2 维护
+    userGameUserMaxNumber?: number // 该区服下，每个用户最多可创建的角色个数 {"min":1}
     id?: number // 主键id
     createId?: number // 创建人id
     createTime?: string // 创建时间
@@ -38,6 +39,7 @@ export function GameAreaServiceInfoById(form: NotNullId, config?: AxiosRequestCo
 export interface GameAreaServiceInsertOrUpdateDTO {
     name: string // 区服名称 {"sizeMax":10,"sizeMin":0}
     state: 0 | 1 | 2 // 区服状态：0 关闭 1 正常 2 维护
+    userGameUserMaxNumber?: number // 该区服下，每个用户最多可创建的角色个数 {"min":1}
     remark?: string // 备注
     id?: number // 主键id {"min":1}
 }
