@@ -90,7 +90,6 @@ export function GameAreaServiceUserGameUserJwt(form: GameAreaServiceUserGameUser
 
 export interface GameAreaServiceUserGameUserPageDTO {
     areaServiceId?: number // 区服主键 id（外键）
-    userId?: number // 用户主键id（外键）
     current?: number // 第几页
     pageSize?: number // 每页显示条数
     order?: MyOrderDTO // 排序字段
