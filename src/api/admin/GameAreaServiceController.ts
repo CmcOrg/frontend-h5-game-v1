@@ -65,7 +65,7 @@ export function GameAreaServicePage(form: GameAreaServicePageDTO, config?: Axios
 }
 
 export interface GameUserInsertOrUpdateDTO {
-    nickname: string // null {"regexp":"^[\\u4E00-\\u9FA5A-Za-z0-9_-]{2,20}$"}
+    nickname: string // 昵称 {"regexp":"^[\\u4E00-\\u9FA5A-Za-z0-9_-]{2,20}$"}
     bio?: string // 个人简介
     avatarUri?: string // 头像uri
     areaServiceId: number // 区服主键 id（外键）
