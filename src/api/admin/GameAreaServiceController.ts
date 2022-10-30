@@ -73,5 +73,5 @@ export interface GameAreaServiceUserPageDTO {
 
 // 用户，分页排序查询
 export function GameAreaServiceUserPage(form: GameAreaServiceUserPageDTO, config?: AxiosRequestConfig) {
-    return $http.myProPagePost<GameAreaServiceDO>('/game/areaService/userPage', form, config)
+    return $http.myProPagePost<GameAreaServiceDO>('/game/areaService/user/page', form, config)
 }
