@@ -64,19 +64,15 @@ export function GameAreaServicePage(form: GameAreaServicePageDTO, config?: Axios
     return $http.myProPagePost<GameAreaServiceDO>('/game/areaService/page', form, config)
 }
 
-export interface GameUserInsertOrUpdateDTO {
+export interface GameAreaServiceGameUserInsertDTO {
     nickname: string // 昵称 {"regexp":"^[\\u4E00-\\u9FA5A-Za-z0-9_-]{2,20}$"}
-    bio?: string // 个人简介
-    avatarUri?: string // 头像uri
-    areaServiceId: number // 区服主键 id（外键）
-    userId: number // 用户主键id（外键）
-    enableFlag?: boolean // 正常/冻结
+    areaServiceId: number // 区服主键 id（外键） {"min":1}
     id?: number // 主键id {"min":1}
 }
 
-// 用户，新增/修改，游戏用户
-export function GameAreaServiceUserGameUserInsertOrUpdate(form: GameUserInsertOrUpdateDTO, config?: AxiosRequestConfig) {
-    return $http.myPost<string>('/game/areaService/user/gameUser', form, config)
+// 用户，新增，游戏用户
+export function GameAreaServiceUserGameUserInsert(form: GameAreaServiceGameUserInsertDTO, config?: AxiosRequestConfig) {
+    return $http.myPost<string>('/game/areaService/user/gameUser/insert', form, config)
 }
 
 export interface GameAreaServiceUserGameUserJwtDTO {

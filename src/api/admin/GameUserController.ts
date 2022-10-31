@@ -42,7 +42,8 @@ export interface GameUserInsertOrUpdateDTO {
     nickname: string // 昵称 {"regexp":"^[\\u4E00-\\u9FA5A-Za-z0-9_-]{2,20}$"}
     bio?: string // 个人简介
     avatarUri?: string // 头像uri
-    areaServiceId: number // 区服主键 id（外键）
+    areaServiceId: number // 区服主键 id（外键） {"min":1}
+    userId: number // 用户主键id（外键） {"min":1}
     enableFlag?: boolean // 正常/冻结
     id?: number // 主键id {"min":1}
 }
