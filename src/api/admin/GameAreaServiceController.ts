@@ -76,7 +76,7 @@ export interface GameUserInsertOrUpdateDTO {
 
 // 用户，新增/修改，游戏用户
 export function GameAreaServiceUserGameUserInsertOrUpdate(form: GameUserInsertOrUpdateDTO, config?: AxiosRequestConfig) {
-    return $http.myPost<string>('/game/areaService/user/gameUser/insertOrUpdate', form, config)
+    return $http.myPost<string>('/game/areaService/user/gameUser', form, config)
 }
 
 export interface GameAreaServiceUserGameUserJwtDTO {
