@@ -64,6 +64,11 @@ export function GameAreaServicePage(form: GameAreaServicePageDTO, config?: Axios
     return $http.myProPagePost<GameAreaServiceDO>('/game/areaService/page', form, config)
 }
 
+// 用户，批量删除，游戏用户
+export function GameAreaServiceUserGameUserDeleteByIdSet(form: NotEmptyIdSet, config?: AxiosRequestConfig) {
+    return $http.myPost<string>('/game/areaService/user/gameUser/deleteByIdSet', form, config)
+}
+
 export interface GameAreaServiceGameUserInsertDTO {
     nickname: string // 昵称 {"regexp":"^[\\u4E00-\\u9FA5A-Za-z0-9_-]{2,20}$"}
     areaServiceId: number // 区服主键 id（外键） {"min":1}
