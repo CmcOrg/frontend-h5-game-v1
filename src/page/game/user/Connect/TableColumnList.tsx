@@ -1,7 +1,6 @@
 import {ActionType, ProColumns} from "@ant-design/pro-components";
-import {GameUserConnectDO} from "@/api/admin/GameUserConnectController";
+import {GameUserConnectDeleteByIdSet, GameUserConnectDO} from "@/api/admin/GameUserConnectController";
 import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
-import {GameRoomCurrentDeleteByIdSet} from "@/api/admin/GameRoomCurrentController";
 
 const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<GameUserConnectDO>[] => [
     {
@@ -35,7 +34,7 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
         render: (dom, entity) => [
             <a key="1" className={"red3"} onClick={() => {
                 ExecConfirm(() => {
-                    return GameRoomCurrentDeleteByIdSet({idSet: [entity.id!]}).then(res => {
+                    return GameUserConnectDeleteByIdSet({idSet: [entity.id!]}).then(res => {
                         ToastSuccess(res.msg)
                         actionRef.current?.reload()
                     })

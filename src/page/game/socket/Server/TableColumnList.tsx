@@ -1,8 +1,7 @@
 import {YesNoDict} from "@/util/DictUtil";
 import {ActionType, ProColumns} from "@ant-design/pro-components";
-import {GameSocketServerDO} from "@/api/admin/GameSocketServerController";
+import {GameSocketServerDeleteByIdSet, GameSocketServerDO} from "@/api/admin/GameSocketServerController";
 import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
-import {GameRoomCurrentDeleteByIdSet} from "@/api/admin/GameRoomCurrentController";
 
 const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<GameSocketServerDO>[] => [
     {
@@ -46,7 +45,7 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
         render: (dom, entity) => [
             <a key="1" className={"red3"} onClick={() => {
                 ExecConfirm(() => {
-                    return GameRoomCurrentDeleteByIdSet({idSet: [entity.id!]}).then(res => {
+                    return GameSocketServerDeleteByIdSet({idSet: [entity.id!]}).then(res => {
                         ToastSuccess(res.msg)
                         actionRef.current?.reload()
                     })
