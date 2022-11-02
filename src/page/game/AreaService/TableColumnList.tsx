@@ -25,6 +25,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameAreaServiceInse
     {
         title: '每个用户最多角色数',
         dataIndex: 'userGameUserMaxNumber',
+        width: 160,
     },
 
     {
