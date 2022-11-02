@@ -48,7 +48,7 @@ export interface GameRoomCurrentPageDTO {
     id?: number // 主键 id
     roomConfigId?: number // 房间配置主键 id
     name?: string // 房间配置名称
-    playType?: 1 | 2 | 3 // 房间玩法：1 大厅 2 捕鱼 3 斗地主
+    playType?: 1 | 2 | 3 // 房间玩法：1 大厅（无法重连） 2 捕鱼 3 斗地主
     roomType?: 1000 | 2000 | 2001 | 2002 | 2003 | 3000 // 房间类型，例如：1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛
     useMoneyType?: -1 | 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
     gotMoneyType?: -1 | 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
@@ -66,7 +66,7 @@ export interface GameRoomCurrentPageVO {
     id?: number // 主键 id
     roomConfigId?: number // 房间配置主键 id
     name?: string // 房间配置名称
-    playType?: 1 | 2 | 3 // 房间玩法：1 大厅 2 捕鱼 3 斗地主
+    playType?: 1 | 2 | 3 // 房间玩法：1 大厅（无法重连） 2 捕鱼 3 斗地主
     roomType?: 1000 | 2000 | 2001 | 2002 | 2003 | 3000 // 房间类型，例如：1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛
     useMoneyType?: -1 | 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
     gotMoneyType?: -1 | 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
@@ -79,9 +79,4 @@ export interface GameRoomCurrentPageVO {
 // 分页排序查询
 export function GameRoomCurrentPage(form: GameRoomCurrentPageDTO, config?: AxiosRequestConfig) {
     return $http.myProPagePost<GameRoomCurrentPageVO>('/game/roomCurrent/page', form, config)
-}
-
-// 重连房间
-export function GameRoomCurrentReconnectRoom(config?: AxiosRequestConfig) {
-    return $http.myPost<void>('/game/roomCurrent/reconnectRoom', undefined, config)
 }

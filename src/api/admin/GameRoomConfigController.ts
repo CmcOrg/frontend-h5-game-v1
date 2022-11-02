@@ -21,7 +21,7 @@ export interface GameRoomConfigDO {
     orderNo?: number // 排序号（值越大越前面，默认为 0）
     maxUserTotal?: number // 房间最大人数
     maxRoomTotal?: number // 房间最大数量
-    playType?: 1 | 2 | 3 // 房间玩法：1 大厅 2 捕鱼 3 斗地主
+    playType?: 1 | 2 | 3 // 房间玩法：1 大厅（无法重连） 2 捕鱼 3 斗地主
     roomType?: 1000 | 2000 | 2001 | 2002 | 2003 | 3000 // 房间类型，例如：1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛
     useMoneyType?: -1 | 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
     gotMoneyType?: -1 | 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
@@ -56,7 +56,7 @@ export interface GameRoomConfigInsertOrUpdateDTO {
     orderNo?: number // 排序号（值越大越前面，默认为 0）
     maxUserTotal?: number // 房间最大人数
     maxRoomTotal?: number // 房间最大数量
-    playType?: 1 | 2 | 3 // 房间玩法：1 大厅 2 捕鱼 3 斗地主
+    playType?: 1 | 2 | 3 // 房间玩法：1 大厅（无法重连） 2 捕鱼 3 斗地主
     roomType?: 1000 | 2000 | 2001 | 2002 | 2003 | 3000 // 房间类型，例如：1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛
     useMoneyType?: -1 | 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
     gotMoneyType?: -1 | 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
@@ -78,7 +78,7 @@ export function GameRoomConfigInsertOrUpdate(form: GameRoomConfigInsertOrUpdateD
 
 export interface GameRoomConfigPageDTO {
     name?: string // 房间配置名称
-    playType?: 1 | 2 | 3 // 房间玩法：1 大厅 2 捕鱼 3 斗地主
+    playType?: 1 | 2 | 3 // 房间玩法：1 大厅（无法重连） 2 捕鱼 3 斗地主
     roomType?: 1000 | 2000 | 2001 | 2002 | 2003 | 3000 // 房间类型，例如：1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛
     useMoneyType?: -1 | 1 | 2 | 3 | 4 // 消耗货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
     gotMoneyType?: -1 | 1 | 2 | 3 | 4 // 得到货币类型：1 金币 2 龙晶 3 钻石 4 临时货币（退房间清零）
