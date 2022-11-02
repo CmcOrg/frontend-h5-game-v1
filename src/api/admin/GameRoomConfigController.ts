@@ -97,3 +97,8 @@ export interface GameRoomConfigPageDTO {
 export function GameRoomConfigPage(form: GameRoomConfigPageDTO, config?: AxiosRequestConfig) {
     return $http.myProPagePost<GameRoomConfigDO>('/game/roomConfig/page', form, config)
 }
+
+// 用户，分页排序查询
+export function GameRoomConfigUserPage(config?: AxiosRequestConfig) {
+    return $http.myProPagePost<GameRoomConfigDO>('/game/roomConfig/user/page', undefined, config)
+}
