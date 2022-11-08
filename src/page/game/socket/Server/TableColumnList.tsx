@@ -20,6 +20,8 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
 
     {title: '最大连接数', dataIndex: 'maxConnect', ellipsis: true,},
 
+    {title: '当前连接数', dataIndex: 'socketServerCurrentConnectTotal', ellipsis: true, width: 100,},
+
     {
         title: '创建时间',
         dataIndex: 'createTime',
