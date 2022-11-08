@@ -18,7 +18,7 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
 
     {title: '主键 id', dataIndex: 'id', ellipsis: true,},
 
-    {title: '配置id', dataIndex: 'roomConfigId', ellipsis: true,},
+    {title: '配置id', dataIndex: 'roomConfigId', ellipsis: true, width: 90,},
 
     {title: '配置名称', dataIndex: 'name', ellipsis: true, width: 90,},
 
@@ -78,7 +78,7 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
         },
     },
 
-    {title: 'socket服务器id', dataIndex: 'socketServerId', ellipsis: true,},
+    {title: 'socketServerId', dataIndex: 'socketServerId', ellipsis: true, width: 120,},
 
     {
         title: '创建时间',
