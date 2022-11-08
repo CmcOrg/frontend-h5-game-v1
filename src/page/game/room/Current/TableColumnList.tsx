@@ -80,6 +80,8 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
 
     {title: 'socketServerId', dataIndex: 'socketServerId', ellipsis: true, width: 120,},
 
+    {title: '当前连接数', dataIndex: 'roomCurrentConnectTotal', ellipsis: true, width: 100,},
+
     {
         title: '创建时间',
         dataIndex: 'createTime',
