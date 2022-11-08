@@ -1,13 +1,18 @@
 import {ActionType, ProColumns} from "@ant-design/pro-components";
-import {GameUserExpDO} from "@/api/admin/GameUserExpController";
+import {GameUserExpDeleteByIdSet, GameUserExpDO} from "@/api/admin/GameUserExpController";
 import {GameUserExpTypeEnumSelectList} from "@/page/game/room/Config/Enums";
+import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
 
 const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<GameUserExpDO>[] => [
+
     {
         title: '序号',
         dataIndex: 'index',
         valueType: 'index',
+        width: 50,
     },
+
+    {title: '主键 id', dataIndex: 'id', ellipsis: true,},
 
     {title: '用户 id', dataIndex: 'id', ellipsis: true,},
 
@@ -33,6 +38,22 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
         dataIndex: 'updateTime',
         hideInSearch: true,
         valueType: 'fromNow',
+    },
+
+    {
+        title: '操作',
+        dataIndex: 'option',
+        valueType: 'option',
+        render: (dom, entity) => [
+            <a key="1" className={"red3"} onClick={() => {
+                ExecConfirm(() => {
+                    return GameUserExpDeleteByIdSet({idSet: [entity.id!]}).then(res => {
+                        ToastSuccess(res.msg)
+                        actionRef.current?.reload()
+                    })
+                }, undefined, `确定删除【${entity.id}】吗？`)
+            }}>删除</a>,
+        ],
     },
 
 ];

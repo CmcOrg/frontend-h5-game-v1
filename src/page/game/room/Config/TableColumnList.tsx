@@ -18,16 +18,17 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
         title: '序号',
         dataIndex: 'index',
         valueType: 'index',
+        width: 50,
     },
 
-    {title: '配置名称', dataIndex: 'name', ellipsis: true,},
+    {title: '配置名称', dataIndex: 'name', ellipsis: true, width: 80,},
 
-    {title: '最大人数', dataIndex: 'maxUserTotal', ellipsis: true, hideInSearch: true,},
+    {title: '最大人数', dataIndex: 'maxUserTotal', ellipsis: true, hideInSearch: true, width: 80,},
 
-    {title: '最大数量', dataIndex: 'maxRoomTotal', ellipsis: true, hideInSearch: true,},
+    {title: '最大数量', dataIndex: 'maxRoomTotal', ellipsis: true, hideInSearch: true, width: 80,},
 
     {
-        title: '房间玩法', dataIndex: 'playType', valueType: 'select',
+        title: '房间玩法', dataIndex: 'playType', valueType: 'select', width: 80,
         fieldProps: {
             showSearch: true,
             options: GameRoomConfigPlayTypeEnumSelectList,
@@ -43,7 +44,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
     },
 
     {
-        title: '消耗货币', dataIndex: 'useMoneyType', valueType: 'select',
+        title: '消耗货币', dataIndex: 'useMoneyType', valueType: 'select', width: 80,
         fieldProps: {
             showSearch: true,
             options: GameMoneyTypeEnumSelectList,
@@ -51,7 +52,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
     },
 
     {
-        title: '得到货币', dataIndex: 'gotMoneyType', valueType: 'select',
+        title: '得到货币', dataIndex: 'gotMoneyType', valueType: 'select', width: 80,
         fieldProps: {
             showSearch: true,
             options: GameMoneyTypeEnumSelectList,
@@ -59,31 +60,31 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
     },
 
     {
-        title: '限制货币', dataIndex: 'limitMoneyType', valueType: 'select',
+        title: '限制货币', dataIndex: 'limitMoneyType', valueType: 'select', width: 80,
         fieldProps: {
             showSearch: true,
             options: GameMoneyTypeEnumSelectList,
         },
     },
 
-    {title: '货币最低', dataIndex: 'minUserMoney', ellipsis: true, hideInSearch: true,},
+    {title: '货币最低', dataIndex: 'minUserMoney', ellipsis: true, hideInSearch: true, width: 80,},
 
-    {title: '货币最高', dataIndex: 'maxUserMoney', ellipsis: true, hideInSearch: true,},
+    {title: '货币最高', dataIndex: 'maxUserMoney', ellipsis: true, hideInSearch: true, width: 80,},
 
     {
-        title: '限制经验', dataIndex: 'limitExpType', valueType: 'select',
+        title: '限制经验', dataIndex: 'limitExpType', valueType: 'select', width: 80,
         fieldProps: {
             showSearch: true,
             options: GameUserExpTypeEnumSelectList,
         },
     },
 
-    {title: '最低经验', dataIndex: 'minUserExp', ellipsis: true, hideInSearch: true,},
+    {title: '最低经验', dataIndex: 'minUserExp', ellipsis: true, hideInSearch: true, width: 80,},
 
-    {title: '最高经验', dataIndex: 'maxUserExp', ellipsis: true, hideInSearch: true,},
+    {title: '最高经验', dataIndex: 'maxUserExp', ellipsis: true, hideInSearch: true, width: 80,},
 
     {
-        title: '增加经验', dataIndex: 'roomExpType', valueType: 'select',
+        title: '增加经验', dataIndex: 'roomExpType', valueType: 'select', width: 80,
         fieldProps: {
             showSearch: true,
             options: GameUserExpTypeEnumSelectList,
@@ -100,12 +101,13 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
     {
         title: '是否启用',
         dataIndex: 'enableFlag',
-        valueEnum: YesNoDict
+        valueEnum: YesNoDict,
+        width: 80,
     },
 
-    {title: '排序号', dataIndex: 'orderNo', ellipsis: true, hideInSearch: true,},
+    {title: '排序号', dataIndex: 'orderNo', ellipsis: true, hideInSearch: true, width: 70,},
 
-    {title: '备注', dataIndex: 'remark', ellipsis: true,},
+    {title: '备注', dataIndex: 'remark', ellipsis: true, width: 50,},
 
     {
         title: '操作',

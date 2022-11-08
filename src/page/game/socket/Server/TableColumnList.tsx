@@ -4,10 +4,12 @@ import {GameSocketServerDeleteByIdSet, GameSocketServerDO} from "@/api/admin/Gam
 import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
 
 const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<GameSocketServerDO>[] => [
+
     {
         title: '序号',
         dataIndex: 'index',
         valueType: 'index',
+        width: 50,
     },
 
     {title: '主键 id', dataIndex: 'id', ellipsis: true,},

@@ -13,16 +13,17 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
         title: '序号',
         dataIndex: 'index',
         valueType: 'index',
+        width: 50,
     },
 
     {title: '主键 id', dataIndex: 'id', ellipsis: true,},
 
     {title: '配置id', dataIndex: 'roomConfigId', ellipsis: true,},
 
-    {title: '配置名称', dataIndex: 'name', ellipsis: true,},
+    {title: '配置名称', dataIndex: 'name', ellipsis: true, width: 90,},
 
     {
-        title: '房间玩法', dataIndex: 'playType', valueType: 'select',
+        title: '房间玩法', dataIndex: 'playType', valueType: 'select', width: 90,
         fieldProps: {
             showSearch: true,
             options: GameRoomConfigPlayTypeEnumSelectList,
@@ -38,7 +39,7 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
     },
 
     {
-        title: '消耗货币', dataIndex: 'useMoneyType', valueType: 'select',
+        title: '消耗货币', dataIndex: 'useMoneyType', valueType: 'select', width: 90,
         fieldProps: {
             showSearch: true,
             options: GameMoneyTypeEnumSelectList,
@@ -46,7 +47,7 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
     },
 
     {
-        title: '得到货币', dataIndex: 'gotMoneyType', valueType: 'select',
+        title: '得到货币', dataIndex: 'gotMoneyType', valueType: 'select', width: 90,
         fieldProps: {
             showSearch: true,
             options: GameMoneyTypeEnumSelectList,
@@ -54,7 +55,7 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
     },
 
     {
-        title: '限制货币', dataIndex: 'limitMoneyType', valueType: 'select',
+        title: '限制货币', dataIndex: 'limitMoneyType', valueType: 'select', width: 90,
         fieldProps: {
             showSearch: true,
             options: GameMoneyTypeEnumSelectList,
@@ -62,7 +63,7 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
     },
 
     {
-        title: '限制经验', dataIndex: 'limitExpType', valueType: 'select',
+        title: '限制经验', dataIndex: 'limitExpType', valueType: 'select', width: 90,
         fieldProps: {
             showSearch: true,
             options: GameUserExpTypeEnumSelectList,
@@ -70,7 +71,7 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
     },
 
     {
-        title: '增加经验', dataIndex: 'roomExpType', valueType: 'select',
+        title: '增加经验', dataIndex: 'roomExpType', valueType: 'select', width: 90,
         fieldProps: {
             showSearch: true,
             options: GameUserExpTypeEnumSelectList,
@@ -78,6 +79,13 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
     },
 
     {title: 'socket服务器id', dataIndex: 'socketServerId', ellipsis: true,},
+
+    {
+        title: '创建时间',
+        dataIndex: 'createTime',
+        hideInSearch: true,
+        valueType: 'fromNow',
+    },
 
     {
         title: '操作',

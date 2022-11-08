@@ -3,10 +3,12 @@ import {GameUserConnectDeleteByIdSet, GameUserConnectDO} from "@/api/admin/GameU
 import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
 
 const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<GameUserConnectDO>[] => [
+
     {
         title: '序号',
         dataIndex: 'index',
         valueType: 'index',
+        width: 50,
     },
 
     {title: '用户 id', dataIndex: 'id', ellipsis: true,},

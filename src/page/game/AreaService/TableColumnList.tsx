@@ -8,10 +8,12 @@ import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
 import {AreaServiceStateEnumColorMap} from "@/page/game/AreaService/Enums";
 
 const TableColumnList = (currentForm: React.MutableRefObject<GameAreaServiceInsertOrUpdateDTO | null>, setFormVisible: React.Dispatch<React.SetStateAction<boolean>>, actionRef: React.RefObject<ActionType>): ProColumns<GameAreaServiceDO>[] => [
+
     {
         title: '序号',
         dataIndex: 'index',
         valueType: 'index',
+        width: 50,
     },
 
     {title: '区服名称', dataIndex: 'name', ellipsis: true,},
