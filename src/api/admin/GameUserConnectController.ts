@@ -21,7 +21,7 @@ export interface GameUserConnectDO {
     roomCurrentId?: number // 当前房间主键 id
     createTime?: string // 创建时间
     updateTime?: string // 修改时间
-    connectTotal?: number // 按照房间分组之后，每个当前房间的连接数
+    roomCurrentConnectTotal?: number // 按照房间分组之后，每个当前房间的连接数
 }
 
 // 通过主键id，查看详情
