@@ -13,7 +13,7 @@ const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<Gam
         title: '序号',
         dataIndex: 'index',
         valueType: 'index',
-        width: 50,
+        width: 90,
     },
 
     {title: '主键 id', dataIndex: 'id', ellipsis: true,},

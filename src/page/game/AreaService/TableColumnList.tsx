@@ -13,7 +13,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameAreaServiceInse
         title: '序号',
         dataIndex: 'index',
         valueType: 'index',
-        width: 50,
+        width: 90,
     },
 
     {title: '区服名称', dataIndex: 'name', ellipsis: true,},

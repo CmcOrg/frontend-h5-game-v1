@@ -12,7 +12,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<SysUserInsertOrUpda
         title: '序号',
         dataIndex: 'index',
         valueType: 'index',
-        width: 50,
+        width: 90,
     },
 
     {
