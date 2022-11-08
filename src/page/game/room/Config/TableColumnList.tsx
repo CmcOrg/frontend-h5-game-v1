@@ -107,7 +107,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
 
     {title: '排序号', dataIndex: 'orderNo', ellipsis: true, hideInSearch: true, width: 70,},
 
-    {title: '备注', dataIndex: 'remark', ellipsis: true, width: 50,},
+    {title: '备注', dataIndex: 'remark', ellipsis: true, width: 90,},
 
     {
         title: '操作',
