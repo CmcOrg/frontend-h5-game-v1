@@ -44,7 +44,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameAreaServiceInse
         valueType: 'fromNow',
     },
 
-    {title: '备注', dataIndex: 'remark', ellipsis: true,},
+    {title: '备注', dataIndex: 'remark', ellipsis: true, width: 90,},
 
     {
         title: '操作',
