@@ -16,23 +16,35 @@ interface IGameRoomConfigPlayTypeEnumValue {
     roomTypeSet: number[] // 支持的房间类型
 }
 
+export const CODE_OBJ = {
+    HALL_GENERAL: 1000, // 大厅-普通
+    FISHING_ATTEMPT: 2000, // 捕鱼-体验场
+    FISHING_GENERAL: 2001, // 捕鱼-普通场
+    FISHING_CHALLENGE: 2002, // 捕鱼-挑战场
+    FISHING_GRAND: 2003, // 捕鱼-大奖赛
+    FIGHTING_LANDLORD_GENERAL: 3000, // 斗地主-普通
+}
+
 // 房间玩法
 export const GameRoomConfigPlayTypeEnum = new Map<number, IGameRoomConfigPlayTypeEnumValue>();
-GameRoomConfigPlayTypeEnum.set(1, {text: "大厅", roomTypeSet: [1000]})
-GameRoomConfigPlayTypeEnum.set(2, {text: "捕鱼", roomTypeSet: [2000, 2001, 2002, 2003]})
-GameRoomConfigPlayTypeEnum.set(3, {text: "斗地主", roomTypeSet: [3000]})
+GameRoomConfigPlayTypeEnum.set(1, {text: "大厅", roomTypeSet: [CODE_OBJ.HALL_GENERAL]})
+GameRoomConfigPlayTypeEnum.set(2, {
+    text: "捕鱼",
+    roomTypeSet: [CODE_OBJ.FISHING_ATTEMPT, CODE_OBJ.FISHING_GENERAL, CODE_OBJ.FISHING_CHALLENGE, CODE_OBJ.FISHING_GRAND]
+})
+GameRoomConfigPlayTypeEnum.set(3, {text: "斗地主", roomTypeSet: [CODE_OBJ.FIGHTING_LANDLORD_GENERAL]})
 
 // 将 map转换为 下拉选 list
 export const GameRoomConfigPlayTypeEnumSelectList = NumberTextMapToSelectList(GameRoomConfigPlayTypeEnum)
 
 // 房间类型
 export const GameRoomConfigRoomTypeEnum = new Map<number, string>();
-GameRoomConfigRoomTypeEnum.set(1000, "大厅-普通")
-GameRoomConfigRoomTypeEnum.set(2000, "捕鱼-体验场")
-GameRoomConfigRoomTypeEnum.set(2001, "捕鱼-普通场")
-GameRoomConfigRoomTypeEnum.set(2002, "捕鱼-挑战场")
-GameRoomConfigRoomTypeEnum.set(2003, "捕鱼-大奖赛")
-GameRoomConfigRoomTypeEnum.set(3000, "斗地主-普通")
+GameRoomConfigRoomTypeEnum.set(CODE_OBJ.HALL_GENERAL, "大厅-普通")
+GameRoomConfigRoomTypeEnum.set(CODE_OBJ.FISHING_ATTEMPT, "捕鱼-体验场")
+GameRoomConfigRoomTypeEnum.set(CODE_OBJ.FISHING_GENERAL, "捕鱼-普通场")
+GameRoomConfigRoomTypeEnum.set(CODE_OBJ.FISHING_CHALLENGE, "捕鱼-挑战场")
+GameRoomConfigRoomTypeEnum.set(CODE_OBJ.FISHING_GRAND, "捕鱼-大奖赛")
+GameRoomConfigRoomTypeEnum.set(CODE_OBJ.FIGHTING_LANDLORD_GENERAL, "斗地主-普通")
 
 // 将 map转换为 下拉选 list
 export const GameRoomConfigRoomTypeEnumSelectList = NumberStringMapToSelectList(GameRoomConfigRoomTypeEnum)
