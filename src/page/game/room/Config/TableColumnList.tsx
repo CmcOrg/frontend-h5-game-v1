@@ -11,7 +11,7 @@ import {
     GameRoomConfigPlayTypeEnumSelectList,
     GameRoomConfigRoomTypeEnumSelectList,
     GameUserExpTypeEnumSelectList
-} from "@/page/game/room/Config/Enums";
+} from "@/page/game/room/Config/Enum";
 
 const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInsertOrUpdateDTO | null>, setFormVisible: React.Dispatch<React.SetStateAction<boolean>>, actionRef: React.RefObject<ActionType>): ProColumns<GameRoomConfigDO>[] => [
     {

@@ -1,6 +1,6 @@
 import {ActionType, ProColumns} from "@ant-design/pro-components";
 import {GameUserExpDeleteByIdSet, GameUserExpDO} from "@/api/admin/GameUserExpController";
-import {GameUserExpTypeEnumSelectList} from "@/page/game/room/Config/Enums";
+import {GameUserExpTypeEnumSelectList} from "@/page/game/room/Config/Enum";
 import {ExecConfirm, ToastSuccess} from "@/util/ToastUtil";
 
 const TableColumnList = (actionRef: React.RefObject<ActionType>): ProColumns<GameUserExpDO>[] => [

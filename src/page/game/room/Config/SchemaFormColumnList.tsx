@@ -7,7 +7,7 @@ import {
     GameRoomConfigPlayTypeEnumSelectList,
     GameRoomConfigRoomTypeEnumSelectList,
     GameUserExpTypeEnumSelectList
-} from "@/page/game/room/Config/Enums";
+} from "@/page/game/room/Config/Enum";
 
 export const InitForm: GameRoomConfigInsertOrUpdateDTO = {} as GameRoomConfigInsertOrUpdateDTO
 
