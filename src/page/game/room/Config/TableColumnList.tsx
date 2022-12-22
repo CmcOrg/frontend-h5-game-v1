@@ -96,6 +96,7 @@ const TableColumnList = (currentForm: React.MutableRefObject<GameRoomConfigInser
         dataIndex: 'updateTime',
         hideInSearch: true,
         valueType: 'fromNow',
+        width: 90,
     },
 
     {
