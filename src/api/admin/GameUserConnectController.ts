@@ -17,8 +17,9 @@ export interface NotNullId {
 }
 
 export interface GameUserConnectDO {
-    id?: number // 用户主键 id
+    gameUserId?: number // 游戏用户主键 id
     roomCurrentId?: number // 当前房间主键 id
+    userId?: number // 用户主键 id
     createTime?: string // 创建时间
     updateTime?: string // 修改时间
     roomCurrentConnectTotal?: number // 按照房间分组之后，每个当前房间的连接数
@@ -30,8 +31,9 @@ export function GameUserConnectInfoById(form: NotNullId, config?: AxiosRequestCo
 }
 
 export interface GameUserConnectPageDTO {
-    id?: number // 用户主键 id
+    gameUserId?: number // 游戏用户主键 id
     roomCurrentId?: number // 当前房间主键 id
+    userId?: number // 用户主键 id
     current?: number // 第几页
     pageSize?: number // 每页显示条数
     order?: MyOrderDTO // 排序字段
