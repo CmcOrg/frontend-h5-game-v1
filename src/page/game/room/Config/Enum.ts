@@ -16,7 +16,7 @@ interface IGameRoomConfigPlayTypeEnumValue {
     roomTypeSet: number[] // 支持的房间类型
 }
 
-export const CODE_OBJ = {
+export const GAME_ROOM_TYPE_CODE_OBJ = {
     HALL_GENERAL: 1000, // 大厅-普通
     FISHING_ATTEMPT: 2000, // 捕鱼-体验场
     FISHING_GENERAL: 2001, // 捕鱼-普通场
@@ -27,24 +27,24 @@ export const CODE_OBJ = {
 
 // 房间玩法
 export const GameRoomConfigPlayTypeEnum = new Map<number, IGameRoomConfigPlayTypeEnumValue>();
-GameRoomConfigPlayTypeEnum.set(1, {text: "大厅", roomTypeSet: [CODE_OBJ.HALL_GENERAL]})
+GameRoomConfigPlayTypeEnum.set(1, {text: "大厅", roomTypeSet: [GAME_ROOM_TYPE_CODE_OBJ.HALL_GENERAL]})
 GameRoomConfigPlayTypeEnum.set(2, {
     text: "捕鱼",
-    roomTypeSet: [CODE_OBJ.FISHING_ATTEMPT, CODE_OBJ.FISHING_GENERAL, CODE_OBJ.FISHING_CHALLENGE, CODE_OBJ.FISHING_GRAND]
+    roomTypeSet: [GAME_ROOM_TYPE_CODE_OBJ.FISHING_ATTEMPT, GAME_ROOM_TYPE_CODE_OBJ.FISHING_GENERAL, GAME_ROOM_TYPE_CODE_OBJ.FISHING_CHALLENGE, GAME_ROOM_TYPE_CODE_OBJ.FISHING_GRAND]
 })
-GameRoomConfigPlayTypeEnum.set(3, {text: "斗地主", roomTypeSet: [CODE_OBJ.FIGHTING_LANDLORD_GENERAL]})
+GameRoomConfigPlayTypeEnum.set(3, {text: "斗地主", roomTypeSet: [GAME_ROOM_TYPE_CODE_OBJ.FIGHTING_LANDLORD_GENERAL]})
 
 // 将 map转换为 下拉选 list
 export const GameRoomConfigPlayTypeEnumSelectList = NumberTextMapToSelectList(GameRoomConfigPlayTypeEnum)
 
 // 房间类型
 export const GameRoomConfigRoomTypeEnum = new Map<number, string>();
-GameRoomConfigRoomTypeEnum.set(CODE_OBJ.HALL_GENERAL, "大厅-普通")
-GameRoomConfigRoomTypeEnum.set(CODE_OBJ.FISHING_ATTEMPT, "捕鱼-体验场")
-GameRoomConfigRoomTypeEnum.set(CODE_OBJ.FISHING_GENERAL, "捕鱼-普通场")
-GameRoomConfigRoomTypeEnum.set(CODE_OBJ.FISHING_CHALLENGE, "捕鱼-挑战场")
-GameRoomConfigRoomTypeEnum.set(CODE_OBJ.FISHING_GRAND, "捕鱼-大奖赛")
-GameRoomConfigRoomTypeEnum.set(CODE_OBJ.FIGHTING_LANDLORD_GENERAL, "斗地主-普通")
+GameRoomConfigRoomTypeEnum.set(GAME_ROOM_TYPE_CODE_OBJ.HALL_GENERAL, "大厅-普通")
+GameRoomConfigRoomTypeEnum.set(GAME_ROOM_TYPE_CODE_OBJ.FISHING_ATTEMPT, "捕鱼-体验场")
+GameRoomConfigRoomTypeEnum.set(GAME_ROOM_TYPE_CODE_OBJ.FISHING_GENERAL, "捕鱼-普通场")
+GameRoomConfigRoomTypeEnum.set(GAME_ROOM_TYPE_CODE_OBJ.FISHING_CHALLENGE, "捕鱼-挑战场")
+GameRoomConfigRoomTypeEnum.set(GAME_ROOM_TYPE_CODE_OBJ.FISHING_GRAND, "捕鱼-大奖赛")
+GameRoomConfigRoomTypeEnum.set(GAME_ROOM_TYPE_CODE_OBJ.FIGHTING_LANDLORD_GENERAL, "斗地主-普通")
 
 // 将 map转换为 下拉选 list
 export const GameRoomConfigRoomTypeEnumSelectList = NumberStringMapToSelectList(GameRoomConfigRoomTypeEnum)
