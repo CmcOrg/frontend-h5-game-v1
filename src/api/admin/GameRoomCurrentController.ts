@@ -12,11 +12,6 @@ export function GameRoomCurrentDeleteByIdSet(form: NotEmptyIdSet, config?: Axios
     return $http.myPost<string>('/game/roomCurrent/deleteByIdSet', form, config)
 }
 
-// 退出房间
-export function GameRoomCurrentExitRoom(config?: AxiosRequestConfig) {
-    return $http.myPost<void>('/game/roomCurrent/exitRoom', undefined, config)
-}
-
 export interface NotNullId {
     id: number // 主键id {"min":1}
 }

@@ -20,6 +20,7 @@ export interface GameSocketServerDO {
     host?: string // host
     port?: number // 端口，备注：host + 端口，可以表示唯一标识
     maxConnect?: number // 最大连接数
+    acceptRoomTypeCodeSeparatorStr?: string // 支持的，房间类型 code 分隔符连接字符串
     socketServerCurrentConnectTotal?: number // 当前：连接数
     id?: number // 主键id
     createId?: number // 创建人id
