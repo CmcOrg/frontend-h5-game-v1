@@ -38,6 +38,7 @@ export interface GameRoomCurrentJoinRoomVO {
     port?: number // 端口，备注：host + 端口，可以表示唯一标识
     securityCode?: string // 连接码：用于获取：用户主键 id，格式：simple-uuid
     currentRoomType?: 1000 | 2000 | 2001 | 2002 | 2003 | 3000 // 房间类型，例如：1000 普通大厅 2000 体验场 2001 普通场 2002 挑战场 2003 大奖赛
+    currentRoomConfigId?: number // 当前房间配置主键 id
 }
 
 // 加入房间
